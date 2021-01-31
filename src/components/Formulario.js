@@ -1,12 +1,6 @@
 import React, {useState} from "react";
 
-const Formulario = () => {
-
-    //state del formulario
-    const [busqueda, guardarBusqueda] = useState({
-        ciudad: '',
-        pais:''
-    });
+const Formulario = ({busqueda, guardarBusqueda, guardarConsultar}) => {
 
     const [error, guardarError] = useState(false);
 
@@ -32,6 +26,7 @@ const Formulario = () => {
             return;
         }
         guardarError(false);
+        guardarConsultar(true);
 
         //pasarlo al componente principal
     };
